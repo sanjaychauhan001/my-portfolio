@@ -1,5 +1,5 @@
 /*  import google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Ubuntu:wght@400;500;700&amp;display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 
 *{
     margin: 0;
@@ -12,7 +12,7 @@ a:visited
     color: white;
 }
 a{
-    color: black;
+    color: white;
 }
 html{
     scroll-behavior: smooth;
@@ -45,14 +45,21 @@ section{
 .about, .services, .skills, .teams, .contact, footer{
     font-family: 'Poppins', sans-serif;
 }
-.about .about-content,
+
+.about .about-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .services .serv-content,
 .skills .skills-content,
 .contact .contact-content{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: space-between;
+    gap: 20px;
 }
 section .title{
     position: relative;
@@ -172,16 +179,14 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    background:url("hero_img.jpg") no-repeat center;
+    background:url("i1.png") no-repeat center;
     height: 100vh;
     color: #fff;
     min-height: 500px;
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Ubuntu', sans-serif;
-  
 }
-
 .home .max-width{
   width: 100%;
   display: flex;
@@ -203,7 +208,7 @@ section .title::after{
 }
 .home .home-content .text-3 span{
     color: crimson;
-    font-weight: 800;
+    font-weight: 500;
 }
 .home .home-content a{
     display: inline-block;
@@ -217,32 +222,13 @@ section .title::after{
     border: 2px solid crimson;
     transition: all 0.3s ease;
 }
-
-.home .home-content .social-txt a{
-    display: inline-block;
-    background: rgba(255, 139, 162, 0.027);
-    color: #fff;
-    font-size: 25px;
-    padding: 12px 36px;
-    margin: 20px;
-    font-weight: 200;
-    transition: all 0.3s ease;
-}
-.home .social-link-container{
-    display: flex;
-
-}
-
-
 .home .home-content a:hover{
     color: crimson;
     background: none;
 }
 
 /* about section styling */
-/* .about .title::after{
-    content: "who i am";
-} */
+
 .about .about-content .left{
     width: 45%;
 }
@@ -297,7 +283,7 @@ section .title::after{
     background: #111;
     content: "what i did";
 } */
-/* .services .serv-content .card{
+.services .serv-content .card{
     width: calc(33% - 20px);
     background: #222;
     text-align: center;
@@ -305,7 +291,6 @@ section .title::after{
     padding: 50px 25px;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin: auto;
 }
 .services .serv-content .card img{
     height: 150px;
@@ -314,48 +299,12 @@ section .title::after{
     border-radius: 50%;
     border: 5px solid crimson;
     transition: all 0.3s ease;
-} */
-
-.serv-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
 }
-
-.card-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 -15px; /* to compensate for margin added to individual cards */
-}
-
-.card {
-    flex: 0 0 calc(33.33% - 30px); /* Adjust width as per your requirement */
-    margin-bottom: 30px;
-    cursor: pointer;
-    
-}
-
-.card img {
-    width: 100%;
-    height: auto;
-    border: 5px solid crimson;
-    border-radius: 10px;
-}
-
-.card .text {
-    font-weight: bold;
-    margin: 10px 0;
-}
-/* .services .serv-content .card:hover{
+.services .serv-content .card:hover{
     background: crimson;
-} */
+}
 .services .serv-content .card .box{
-   
     transition: all 0.3s ease;
-    background: #2f2d2f;
-    padding: 20px;
-    border-radius: 6px;
 }
 .services .serv-content .card:hover .box{
     transform: scale(1.05);
@@ -376,9 +325,7 @@ section .title::after{
 
 /* skills section styling */
 
-/* .skills .title::after{
-    content: "what i know";
-} */
+
 .skills .skills-content .column{
     width: calc(50% - 30px);
 }
@@ -519,9 +466,9 @@ section .title::after{
 }
 
 /* contact section styling */
-/* .contact .title::after{
+.contact .title::after{
     content: "get in touch";
-} */
+}
 .contact .contact-content .column{
     width: calc(50% - 30px);
 }
@@ -556,10 +503,10 @@ section .title::after{
 }
 .contact .right form .fields{
     display: flex;
-    flex-direction: column;
 }
 .contact .right form .field,
 .contact .right form .fields .field{
+    height: 45px;
     width: 100%;
     margin-bottom: 15px;
 }
@@ -569,11 +516,6 @@ section .title::after{
 }
 .contact .right form .name{
     margin-right: 10px;
-    height: 45px;
-}
-
-.contact .right form .email{
-    height: 45px;
 }
 .contact .right form .field input,
 .contact .right form .textarea textarea{
@@ -747,7 +689,6 @@ footer span a:hover{
     .contact .right form .name,
     .contact .right form .email{
         margin: 0;
-        
     }
     .right form .error-box{
        width: 150px;
